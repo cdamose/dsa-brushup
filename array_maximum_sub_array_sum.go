@@ -23,5 +23,14 @@ return result
 }
 
 func Maximum_sub_array_kadane_algorithm(arr []int)int{
-	return 0
+	if len(arr)==0 {
+      return 0
+	}
+	res:=arr[0]
+	max_ending:=arr[0]
+	for i:=1;i<len(arr);i++ {
+     max_ending=max(max_ending+arr[i],arr[i])
+	 res=max(max_ending,res)
+	}
+	return res
 }
